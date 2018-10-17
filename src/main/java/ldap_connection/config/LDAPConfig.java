@@ -12,10 +12,10 @@ public class LDAPConfig {
     public LdapContextSource contextSource()
     {
         LdapContextSource contextSource = new LdapContextSource();
-        contextSource.setUrl("");
-        contextSource.setBase("");
-        contextSource.setUserDn("");
-        contextSource.setPassword("");
+        contextSource.setUrl("url do serv ldap");
+        contextSource.setBase("nos base do serv para procurar");
+        contextSource.setUserDn("usuario do serv ldap");
+        contextSource.setPassword("senha do usuario");
         contextSource.setPooled(false);
         contextSource.setReferral("follow");
         contextSource.afterPropertiesSet();
