@@ -21,7 +21,7 @@ public class DefaultUserService implements UserService {
     public Person getUser(final String userName) {
 
         List<Person> person = ldapTemplate.search(query()
-                .where("objectclass").is("person").and("mail").like(userName+"@tqi.com.br"), new PersonAttributesMapper());
+                .where("objectclass").is("person").and("mail").like(userName+"@emp.com.br"), new PersonAttributesMapper());
 
         if(person.size()==0)
            return null;
@@ -33,7 +33,7 @@ public class DefaultUserService implements UserService {
 
     public Boolean testConn(String username, String password){
         Filter filter = new EqualsFilter("sAMAccountName",username);
-        return ldapTemplate.authenticate("OU=TQI",filter.encode(),password);
+        return ldapTemplate.authenticate("OU=NoBase",filter.encode(),password);
 
     }
 
